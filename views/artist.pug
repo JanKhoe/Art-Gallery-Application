@@ -1,0 +1,71 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel='stylesheet', href="/styles/header.css", type="text/css")
+    link(rel='stylesheet', href="/styles/artist.css", type="text/css")
+    script( src="https://kit.fontawesome.com/123336684a.js", crossorigin="anonymous")
+    title= UserData.name
+  body(onload="init()")
+    include ./partials/header
+    #left 
+      img#profilepic(src="/imgs/Default_pfp.png")
+      #usernameWrapper
+        h3= UserData.name
+        if UserData.isArtist && sessionData.loggedin && !(sessionData.userId == UserData["_id"].toString())
+          //- Have  a check for if the current logged in user is following already or not
+          if isFollowing
+            button#following-button(onclick="onUnFollow()") Following
+          else
+            button#follow-button(onclick="onFollow()") + Follow
+          
+      #reviewLikes
+        elem#isOnOwnProfile(someBool = (UserData["_id"].toString() == sessionData.userId).toString())
+        span 
+          i(class ="fa-solid fa-heart active", onclick="onLikesClicked()")#Likes
+        span
+          i(class ="fas fa-comment", onclick="onReviewsClicked()")#Reviews
+        span
+          i(class ="fa-solid fa-wrench", onclick="onEnrolledClicked()")#Enrolled
+      br
+      #LRPosts 
+        strong Liked Posts
+        
+    #middle 
+      #FeedOptions
+        span#DisplayFeed.Display(onclick = "onDisplayFeed()", class="active") Your Feed
+        if UserData.isArtist 
+          span#DisplayFollowers.Display(onclick="onDisplayFollowers()")= "Followers: " + UserData.followers.length
+        span#DisplayFollowing.Display(onclick = "onDisplayFollowing()")= "Following: " + UserData.following.length
+        
+      #Feed
+      if sessionData.userId == UserData["_id"].toString()
+        #ButtonContainers
+          Button#logout.RoundedButtons(onclick = "onLogOut()") LogOut
+          if UserData.isArtist 
+            Button#downgrade.RoundedButtons(onclick = "onDowngrade()") Change to Patron 
+          else
+            Button#upgrade.RoundedButtons(onclick = "onUpgrade()") Upgrade to Artist
+    #right
+      if UserData.isArtist && sessionData.userId == UserData["_id"].toString()
+        p you are an artist
+        #AddButtons
+          a#create.RoundedButtons(href="/create?#") Create Art
+          a.RoundedButtons(href="/createworkshop") Create Workshop
+      if UserData.isArtist
+        #DisplayArtandWorkshops
+          #Art
+            p Created Art 
+            for art, id in UserData.artworks 
+              .anchorWrapper 
+                a.SearchResult(href="/artwork/"+id)= art
+          #Workshops
+            p Created Workshops
+            for workshop in UserData.workshops
+              .anchorWrapper
+                a.SearchResult(href="/workshop/"+ workshop["id"])= workshop["Title"] +" at " + workshop["Date"]
+
+    
+    script(src="/js/artist.js")
+    

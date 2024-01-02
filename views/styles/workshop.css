@@ -1,0 +1,43 @@
+#WorkshopInfo{
+  color: white;
+  display: block;
+}
+
+#TitleAndEnroll{
+  display: inline-flex;
+  align-items: center;
+}
+
+#TitleHeader{
+  width: fit-content;
+}
+
+.link{
+  color: white;
+  transition: all ease-in-out 0.3s;
+}
+
+.link:hover{
+  color: grey;
+}
+
+.SearchResult {
+
+  text-decoration: none;
+  color: #fff; 
+  background: #0E8388;
+  padding: 5px 16px;
+  display: inline-block;
+  border-radius: 3px;
+  border-width: 3px;
+  border-color: #0E8388;
+  margin-left: 12px;
+  border-style: dashed;
+  transition: all ease-in-out 0.3s;
+  max-width: 105px;
+}
+
+.SearchResult:hover{
+  background: #2C3333;
+  border-color: #0E8388;
+}

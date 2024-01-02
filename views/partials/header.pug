@@ -1,0 +1,18 @@
+
+header
+  .container
+    h1.logo
+
+    nav
+      ul
+        li
+          a(href='/') Home
+        li
+          a(href='/search') Search
+        if sessionData.loggedin
+
+          li
+            a(href='/artists/'+sessionData.userId) Profile
+        else 
+          li
+            a(href='/login') Login/Signup

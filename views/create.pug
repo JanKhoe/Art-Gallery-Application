@@ -1,0 +1,62 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Create New Artwork
+    link(rel='stylesheet', href="/styles/header.css", type="text/css")
+    link(rel='stylesheet', href="/styles/create.css", type="text/css")
+  body
+    include ./partials/header
+    
+    .createcontainer
+      .text
+
+        u Create new Artwork!
+      br
+      form(action="#", onsubmit=" onCreateArtwork()")
+        .form-row 
+          .input-data 
+            
+            label() Poster Url
+            br
+            input#Poster(type="text" required)
+            .underline 
+            
+        .form-row
+          .input-data
+            
+            label Title
+            br
+            input#ArtTitle(type="text" required)
+            .underline 
+            
+          .input-data
+            
+            label Year
+            br
+            input#Year(type="text" required)
+            .underline
+        .form-row
+          .input-data
+            
+            label Category
+            br
+            input#Category(type="text" required)
+            .underline
+          .input-data
+            
+            label Medium
+            br
+            input#Medium(type="text" required)
+            .underline
+        .form-row
+          .input-data.textarea
+            
+            label Description
+            br
+            textarea#Description(rows="8" cols="80" required)
+            .underline
+        .form-row.submit-btn
+          input#subbtn(type="submit" value="submit" onclick="checkValid()")
+    script(src="/js/create.js")

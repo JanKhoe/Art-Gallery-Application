@@ -1,0 +1,24 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Create Workshop
+    link(rel='stylesheet', href="/styles/header.css", type="text/css")
+    link(rel='stylesheet', href="/styles/createworkshop.css", type="text/css")
+  body
+    include ./partials/header
+    #CenterDiv
+      form( onsubmit="return onCreateNewWorkshop(self)") 
+        h1 Create New Workshop
+        .input-data
+          label Name of Workshop
+          br
+          input#Title(type="text" required)
+          .underline 
+        textarea#WriteReview( cols="45", rows="7", placeholder="WorkShop description...", value="" required)
+        #DateAndTime
+          label(for = "dateofworkshop") Date of workshop
+          input(type ="date", name="dateofworkshop", id="dateofworkshop" required)
+        input#subbtn(type="submit" value="submit")
+    script(src="/js/createworkshop.js") 

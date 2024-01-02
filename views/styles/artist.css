@@ -1,0 +1,410 @@
+#profilepic{
+  width: 140px;
+  height: 140px;
+  margin-top: 24px;
+}
+
+body{
+  clear: none;
+}
+
+
+
+#left{
+  margin-left: 12px;
+  width: 20%;
+  position: relative;
+  float: left;
+}
+#middle{
+  float: left;
+  position: relative;
+  width: 40%;
+  margin-left: 12px;
+}
+#right{
+  float: left;
+  position: relative;
+  width: 35%;
+}
+
+#usernameWrapper{
+  width: 140px;
+  text-align: center;
+}
+
+#Likes{
+  color: red;
+  margin-left: 24px;
+}
+
+#Likes::after{
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: white; 
+  width: 0%;
+  transition: all ease-in-out 250ms;
+}
+
+#Likes:hover::after{
+  height: 5px;
+  width: 100%; 
+
+}
+
+
+
+#Likes.active{
+  color: darkred;
+  margin-left: 24px;
+}
+
+#Likes.active::after{
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: white; 
+  height: 5px;
+  width: 100%; 
+}
+
+#Reviews{
+  color: white;
+  margin-left: 25px;
+}
+
+#Reviews::after{
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: white; 
+  width: 0%;
+  transition: all ease-in-out 250ms;
+}
+
+
+#Reviews:hover::after{
+  height: 5px;
+  width: 100%; 
+
+}
+
+#Reviews.active{
+  color: darkgray;
+  margin-left: 25px;
+}
+
+#Reviews.active::after{
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: white; 
+  height: 5px;
+  width: 100%; 
+}
+
+#Enrolled{
+  color: black;
+  margin-left: 25px;
+}
+
+#Enrolled::after{
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: white; 
+  width: 0%;
+  transition: all ease-in-out 250ms;
+}
+
+#Enrolled:hover::after{
+  height: 5px;
+  width: 100%; 
+}
+
+#Enrolled.active{
+  color: darkgray;
+  margin-left: 25px;
+}
+
+#Enrolled.active::after{
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: white; 
+  height: 5px;
+  width: 100%; 
+}
+
+h3{
+  color: white;
+}
+
+#reviewLikes{
+  width: 140px;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+label{
+  color: white;
+}
+
+#LRPosts{
+  text-align: center;
+  width: 130px;
+  color: white;
+}
+
+.SearchResult {
+  text-decoration: none;
+  color: #fff; 
+  background: #0E8388;
+  padding: 5px 16px;
+  display: inline-block;
+  border-radius: 3px;
+  border-width: 3px;
+  border-color: #0E8388;
+  margin-top: 12px;
+  border-style: dashed;
+  transition: all ease-in-out 0.3s;
+  max-width: 105px;
+}
+
+.SearchResult:hover{
+  background: #2C3333;
+  border-color: #0E8388;
+}
+
+
+.RoundedButtons{
+  background-color: #0E8388;
+  border-radius: 5px;
+  border: #2C3333 solid 2px;
+  color: white;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 12px;
+  padding: auto;
+  margin-right: 32px;
+  text-decoration: none;
+  
+}
+
+.RoundedButtons:hover{
+  background-color: #074547;
+}
+
+#create{
+  color: white;
+  text-decoration: none;
+  width: 60px;
+  height: 30px;
+  text-align: center;
+}
+
+#upgrade{
+  background-color: #0E8388;
+  border-radius: 5px;
+  border: #2C3333 solid 2px;
+  padding: auto;
+}
+
+#upgrade:hover{
+  background-color: #074547;
+}
+
+.ArtTitles{
+  text-align: left;
+  text-decoration: none;
+  color: white;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.ArtTitles:hover{
+  color: grey;
+}
+
+.CommentBox{
+  display: inline-block;
+  text-align: left;
+  justify-content: left;
+  background-color: #0E8388;
+  border-radius: 3px;
+  margin-top: 12px;
+}
+
+.reviewText{
+  font-size: 8px;
+}
+
+#Feed{
+  display: grid;
+  columns: 3;
+  grid-template-columns: auto auto 1fr;
+  gap: 12px;
+  overflow-x: hidden;
+  min-height: 300px;
+  max-height: 300px;
+  border-left: #0E8388 dashed 8px;
+  overflow-y: overlay;
+  scrollbar-width: 0;
+  
+}
+
+#Feed::-webkit-scrollbar{
+  display: none;
+  width: 0px;
+}
+
+.posts{
+  width: 126px;
+  height: 126px;
+}
+
+#ButtonContainers{
+  margin-top: 24px;
+  padding: auto;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+#FeedOptions{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.Display{
+  color: white;
+  margin-right: 12px;
+  user-select: none;
+}
+
+.Display::after{
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: white; 
+  width: 0%;
+  transition: all ease-in-out 250ms;
+  
+}
+
+.Display:hover::after{
+  height: 5px;
+  width: 100%; 
+}
+
+.Display.active::after{
+  content: '';
+  display: block;
+  height: 5px;
+  background-color: white; 
+  height: 5px;
+  width: 100%; 
+}
+
+#AddButtons{
+  display: block;
+}
+
+#WriteReview{
+  appearance: none;
+	border: none;
+	outline: none;
+	border-bottom: .4em solid #0E8388;
+	background: rgba(#0E8388, .2);
+	border-radius: .4em .4em 0 0;
+	padding: .4em;
+	color: #0E8388;
+  resize: none;
+  margin-top: 36px;
+}
+
+
+
+#DisplayArtandWorkshops{
+  display: flex;
+  margin-left: 24px;
+}
+
+#Art{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+#Workshops{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+p{
+  color: white;
+}
+
+#follow-button {
+  color: #3399FF;
+  font-family: "Helvetica";
+  font-size: 10pt;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #3399FF;
+  border-radius: 3px;
+  width: 85px;
+  height: 30px;	
+  cursor: pointer;
+  margin-bottom: 24px;    
+  animation: unfollow 600ms;
+}
+
+@keyframes unfollow{
+  0% {width: 110px;}
+  10% {width: 100px;}
+  40% {width: 90px;}
+  90% {width: 85px;}
+}
+
+#following-button{
+  font-family: "Helvetica";
+  font-size: 10pt;
+  background-color: #ffffff;
+  border: 1px solid;
+  border-color: #3399FF;
+  border-radius: 3px;
+  width: 100px;
+  height: 30px;	
+  cursor: pointer;
+  margin-bottom: 24px; 
+  background-color: #0E8388;
+  border-color: #0E8388;
+  animation: following 600ms;
+}
+
+@keyframes following {
+  0% {width: 85px;}
+  10% {width: 75px;}
+  40% {width: 90px;}
+  90% {width: 100px;}
+
+}
+
+#UnlikeButton{
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: white;
+}
+
+#UnlikeButton:hover{
+  color: grey;
+}
+.anchorWrapper{
+  display: inline-flex;
+  align-items: baseline;
+}

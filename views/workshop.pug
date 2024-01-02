@@ -1,0 +1,29 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title= workshopData.Title
+    link(rel='stylesheet', href="/styles/header.css", type="text/css")
+    link(rel='stylesheet', href="/styles/workshop.css", type="text/css")
+  body 
+    include ./partials/header
+    br
+    br
+    #WorkshopInfo
+      #TitleAndEnroll
+        #TitleHeader
+          h1= workshopData.Title + "'s Workshop Info"
+        if !(workshopData.ArtistId == sessionData.userId)
+          if isEnrolled
+            button#Unenroll.SearchResult(onclick = "onUnEnroll()") UnEnroll?
+          else
+            button#Enroll.SearchResult(onclick="onEnroll()") Enroll?
+      p= "Hosted By: "
+        a.link(href="/artists/"+workshopData.ArtistId)= workshopData.Artist
+      p= "Date: " + workshopData.Date 
+      p= "Description: " + workshopData.Description
+      p= "Enrolled: "
+      for participant in workshopData.Enrolled
+        a.SearchResult(href="/artists/"+ participant.id, id = participant.id)= participant.Name
+    script(src="/js/workshop.js")

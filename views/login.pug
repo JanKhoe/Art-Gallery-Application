@@ -1,0 +1,27 @@
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel='stylesheet', href="/styles/header.css", type="text/css")
+    link(rel='stylesheet', href="/styles/login.css", type="text/css")
+    title Login
+  body 
+    include ./partials/header
+    br
+    br
+    br
+    br
+    
+    .box
+      h1 Welcome!
+      
+      input(type='email', name='email', placeholder='Username', class='email', id = "username")
+      
+      input(type='password', name='password', placeholder='Password', class='email' id = "password")
+      
+      button.btn(onclick="onSignIn()") Sign In
+      button.btn(onclick="onSignUp()") Sign Up
+    
+    script(src="/js/login.js") 

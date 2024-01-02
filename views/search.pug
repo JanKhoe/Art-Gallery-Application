@@ -1,0 +1,45 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Search
+    link(rel='stylesheet', href="/styles/search.css", type="text/css")
+    link(rel='stylesheet', href="/styles/header.css", type="text/css")
+    
+  body(onload="init()")
+    include ./partials/header
+    .fullwrap
+      .search
+        if setSearch.Title
+          input.searchTerm#ArtTitle(type='text', placeholder='Artwork Title', value=setSearch.Title)
+        else
+          input.searchTerm#ArtTitle(type='text', placeholder='Artwork Title')
+    .tophalf
+      .wrap
+        .search
+          input.searchTerm#Artist(type='text', placeholder='Artist Name')
+      .wrap
+        .search
+          if setSearch.Category 
+            input.searchTerm#Category(type='text', placeholder='Category Keyword', value=setSearch.Category)
+          else 
+            input.searchTerm#Category(type='text', placeholder='Category Keyword')
+      .wrap 
+        .search 
+          if setSearch.Medium
+            input.searchTerm#Medium(type='text', placeholder='Medium Keyword', value=setSearch.Medium)
+          else 
+            input.searchTerm#Medium(type='text', placeholder='Medium Keyword')
+    .wrap 
+      
+      button.searchButton(type='button', onclick="getSearchResults()")
+        i.rightArrow 
+
+    #SearchResults
+  
+    script(src="/js/search.js")
+    
+    
+
+        

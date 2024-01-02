@@ -1,0 +1,54 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title= artworkData.Title
+    link(rel='stylesheet', href="/styles/header.css", type="text/css")
+    link(rel='stylesheet', href="/styles/artwork.css", type="text/css")
+  body(onload="init()")
+    include ./partials/header
+    if artworkData 
+      #main 
+        #left 
+          img(src=artworkData.Poster)
+          #postInfo
+            if sessionData.loggedin && sessionData.userId != artworkData.ArtistId
+              if isLiked
+                span#LikeCounter= artworkData.Likes
+                a(onclick="onUnlikeClicked()")#heart-liked &hearts;
+              else 
+                span#LikeCounter= artworkData.Likes
+                a(onclick="onLikeClicked()")#heart-grey &hearts;
+                
+            else 
+              span#LikeCounter= artworkData.Likes
+              a#heart-grey &hearts;
+              p=loggedin
+          
+          #Reviews
+            p
+              strong 
+                u Reviews
+            if sessionData.userId != artworkData.ArtistId
+              textarea#WriteReview( cols="45", rows="7", placeholder="Write your own Review!", value="")
+            each val, userId in artworkData.Reviews
+              each review, index in val 
+                .ReviewWrapper(class = userId+" "+index + " " + "filler" + " " + "filleraswell" + " " + artworkData["_id"].toString())
+                  .singleReview
+                    p
+                      u= review["Name"]
+                    p= review["Review"]
+                  if userId == sessionData.userId
+                    button.unReviewButton(onclick = "rmvReview(this)")  &#10005;
+
+        #right 
+          h1= artworkData.Title
+          h3= "By: "
+            a(href="/artists/"+artworkData.ArtistId)= artworkData.Artist 
+            = " (" + artworkData.Year +") | "
+            a(href="/search/?Category=" + artworkData.Category)= artworkData.Category 
+            = " | " 
+            a(href="/search/?Medium=" + artworkData.Medium)= artworkData.Medium
+          p= artworkData.Description
+  script(src="/js/artwork.js") 
