@@ -2,7 +2,7 @@
 A small scale art gallery used to simulate a social media platform.
 Made using express for the server,
 pug/jade for the engine templates, and
-MongoDB for database
+MongoDB for the database
 # Instructions to run application
 Steps to Run Program:
 1. “npm install” all the projects dependencies
@@ -10,5 +10,5 @@ Steps to Run Program:
 3. Run “node db-initializer.js” to start a database.
 4. After that’s finished “cd ..” back to the parent directory where the server is found
 5. Run “node server.js”
-6. open “http://localhost:3000” in a browser
-7. make sure MongoDB is installed/running as a service
+6. Open “http://localhost:3000” in a browser
+7. Make sure MongoDB is installed/running as a service
