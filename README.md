@@ -1,7 +1,7 @@
 # Art-Gallery-Application
 A small scale art gallery used to simulate a social media platform.
-Made using express for the server
-pug/jade for the engine templates
+Made using express for the server,
+pug/jade for the engine templates, and
 MongoDB for database
 # Instructions to run application
 Steps to Run Program:
