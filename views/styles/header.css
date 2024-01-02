@@ -65,7 +65,7 @@ nav a::before {
 }
 
 nav a:hover::before {
-  top: 12px;
+  top: 18px;
   height: 5px;
   width: 100%; 
 }
