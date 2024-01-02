@@ -8,3 +8,4 @@ Steps to Run Program:
 4. After that’s finished “cd ..” back to the parent directory where the server is found
 5. Run “node server.js”
 6. open “http://localhost:3000” in a browser
+7. make sure MongoDB is installed/running as a service
